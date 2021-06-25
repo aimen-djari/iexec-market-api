@@ -3,6 +3,7 @@ const Koa = require('koa');
 const corsMiddleware = require('kcors')();
 const { maxRequest, period } = require('./config').rateLimit;
 const socket = require('./loaders/socket');
+const ws = require('./loaders/ws');
 require('./controllers/eventsListener'); // load events controller
 const { errorMiddleware } = require('./controllers/error');
 const { router } = require('./controllers/router');
@@ -13,6 +14,7 @@ const ratelimitMiddleware = getRatelimitMiddleware({ maxRequest, period });
 const app = http.createServer(koa.callback());
 
 socket.init(app);
+ws.init(app);
 
 koa
   .use(errorMiddleware)

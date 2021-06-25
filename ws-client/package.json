@@ -1,0 +1,14 @@
+{
+  "name": "ws-client",
+  "version": "0.0.1",
+  "description": "websocket client snippet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "iExec",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^7.4.6"
+  }
+}
