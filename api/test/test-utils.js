@@ -151,6 +151,7 @@ const deployAndGetWorkerpoolorder = async (
   {
     category = 0,
     workerpoolprice = 0,
+    taskmaxduration = 100,
     volume = 1,
     trust,
     apprestrict,
@@ -165,6 +166,7 @@ const deployAndGetWorkerpoolorder = async (
     .createWorkerpoolorder({
       workerpool,
       workerpoolprice,
+      taskmaxduration,
       volume,
       category,
       trust,
@@ -339,6 +341,7 @@ const addDeals = async (dbName, deals) => {
       deal.tag = e.tag || utils.NULL_BYTES32;
       deal.trust = e.trust || 0;
       deal.startTime = e.startTime || Math.floor(Date.now() / 1000);
+      deal.duration = 2;
       deal.botFirst = e.botFirst || 0;
       deal.botSize = deal.volume;
       deal.schedulerRewardRatio = e.schedulerRewardRatio || 0;

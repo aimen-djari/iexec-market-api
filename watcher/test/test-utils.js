@@ -96,6 +96,7 @@ const deployAndGetWorkerpoolorder = async (
   {
     category = 0,
     workerpoolprice = 0,
+    taskmaxduration= 100,
     volume = 1,
     trust,
     apprestrict,
@@ -114,6 +115,7 @@ const deployAndGetWorkerpoolorder = async (
     .createWorkerpoolorder({
       workerpool,
       workerpoolprice,
+      taskmaxduration,
       volume,
       category,
       trust,

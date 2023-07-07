@@ -24,7 +24,7 @@ const timestampSchema = () =>
     /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])T(2[0-3]|[01][0-9]):[0-5][0-9]:[0-5][0-9].[0-9][0-9][0-9]Z$/,
     '${path} must be a timestamp (2019-09-11T10:03:38.068Z is a valid timestamp)',
   );
-
+  
 const addressSchema = () =>
   string()
     .transform((value) => {
@@ -43,7 +43,7 @@ const addressSchema = () =>
         return false;
       }
     });
-
+    
 const bytes32Schema = () =>
   string()
     .lowercase()
@@ -101,6 +101,7 @@ const workerpoolorderSchema = () =>
     {
       workerpool: addressSchema().required(),
       workerpoolprice: positiveIntSchema().required(),
+      taskmaxduration: positiveIntSchema().required(),
       volume: positiveStrictIntSchema().required(),
       tag: bytes32Schema().required(),
       category: positiveIntSchema().required(),
@@ -127,6 +128,7 @@ const requestorderSchema = () =>
       datasetmaxprice: positiveIntSchema().required(),
       workerpool: addressSchema().required(),
       workerpoolmaxprice: positiveIntSchema().required(),
+      taskduration: positiveIntSchema().required(),
       requester: addressSchema().required(),
       volume: positiveStrictIntSchema().required(),
       tag: bytes32Schema().required(),

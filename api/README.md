@@ -1,6 +1,6 @@
-# iexec-market-api/api
+# Market-api/api
 
-iExec marketplace API implementation
+Marketplace API implementation
 
 ## Run
 

@@ -1,4 +1,4 @@
-# iexec-market-watcher
+# Market-watcher
 
 Watch events emitted by iexec smart contracts and update market database
 

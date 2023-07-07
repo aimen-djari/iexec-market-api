@@ -23,6 +23,7 @@ const workerpoolorderSchema = new Schema(
     order: {
       workerpool: { ...AddressSchema, index: true },
       workerpoolprice: SafeUintSchema,
+      taskmaxduration: SafeUintSchema,
       volume: SafeUintSchema,
       tag: Bytes32Schema,
       category: SafeUintSchema,
