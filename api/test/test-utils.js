@@ -342,6 +342,7 @@ const addDeals = async (dbName, deals) => {
       deal.trust = e.trust || 0;
       deal.startTime = e.startTime || Math.floor(Date.now() / 1000);
       deal.duration = 2;
+      deal.maxduration = 2;
       deal.botFirst = e.botFirst || 0;
       deal.botSize = deal.volume;
       deal.schedulerRewardRatio = e.schedulerRewardRatio || 0;
